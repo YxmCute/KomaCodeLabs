@@ -4,7 +4,8 @@ baselazyloadfragment配合tablayout+viewpager使用
  #### project builde.gradle
  <code>maven { url "https://jitpack.io" }</code>
  #### app moudle
- dependencies {
+ <code>dependencies {
 	        compile 'com.github.LeslieKoma:Base:v0.0.2'
 	}
+	</code>
  
