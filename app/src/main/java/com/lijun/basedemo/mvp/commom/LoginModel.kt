@@ -1,4 +1,4 @@
-package com.lijun.basedemo.mvp_one
+package com.lijun.basedemo.mvp.commom
 
 /**
  * @author Koma
@@ -7,6 +7,7 @@ package com.lijun.basedemo.mvp_one
  */
 interface LoginModel {
   interface LoginCallBack {
+    fun logining(msg: String)
     fun loginSuccess(msg: String)
     fun loginFailed(msg: String)
   }

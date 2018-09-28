@@ -1,4 +1,4 @@
-package com.lijun.basedemo.mvp_one
+package com.lijun.basedemo.mvp.commom
 
 /**
  * @author Koma
@@ -8,6 +8,6 @@ package com.lijun.basedemo.mvp_one
 interface LoginVIew {
   fun onLoginSuccess(msg: String)
   fun onLoginFailed(msg: String)
-  fun onLoginning(msg: String)
+  fun onLogining(msg: String)
   fun onLoginComplete(msg: String)
 }

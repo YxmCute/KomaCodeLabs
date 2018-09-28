@@ -34,6 +34,7 @@ public abstract class BaseLazyLoadFragment extends Fragment {
 
     printLog("onAttach");
 
+
   }
 
 

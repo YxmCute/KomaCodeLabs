@@ -1,4 +1,4 @@
-package com.lijun.basedemo.mvp_one
+package com.lijun.basedemo.mvp.commom
 
 /**
  * @author Koma
