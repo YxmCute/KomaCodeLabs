@@ -2,6 +2,7 @@ package com.lijun.basedemo
 
 import android.app.Application
 import com.blankj.utilcode.util.Utils
+import kotlin.properties.Delegates
 
 /**
  * @author Koma
@@ -9,8 +10,13 @@ import com.blankj.utilcode.util.Utils
  * @des
  */
 class App : Application() {
+  companion object {
+    var instance: App by Delegates.notNull()
+  }
+
   override fun onCreate() {
     super.onCreate()
+    instance = this
     Utils.init(this)
   }
 }

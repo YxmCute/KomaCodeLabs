@@ -11,8 +11,11 @@ import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ProgressBar
+import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.lijun.basedemo.R
+import com.lijun.basedemo.utils.DisplayUtils
+import com.lijun.basedemo.view.gggg
 import kotlinx.android.synthetic.main.fragment_login_1.*
 
 /**
@@ -23,7 +26,7 @@ import kotlinx.android.synthetic.main.fragment_login_1.*
 class LoginFragment : Fragment(), LoginVIew {
   private var loginPresenterImpl: LoginPresenterImpl
   private val manager: InputMethodManager by lazy {
-    activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    activity!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
   }
   private lateinit var name: String
   private lateinit var password: String
@@ -82,6 +85,14 @@ class LoginFragment : Fragment(), LoginVIew {
 
 
     })
+    textView.text = """
+      |uticode=${activity?.let { BarUtils.isNavBarVisible(it) }} height=${BarUtils.getNavBarHeight()}
+      |反射=${DisplayUtils.checkDeviceHasNavigationBar(activity as Context)} height=${gggg.getNavigationBarHeightByR(activity)}
+      |方法3=${gggg.isNavigationBarShow(activity)} height=${gggg.getNavigationBarHeight(activity)}
+      |方法4=${gggg.checkNavigationBarShow(activity, activity!!.window)}
+
+    |"""
+
 
     edtPassWord = edt_password
     edtName = edt_name
