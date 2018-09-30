@@ -56,8 +56,8 @@
 
     <com.lijun.basedemo.view.CanvasView
         android:id="@+id/canvasView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:background="@color/colorAccent"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
