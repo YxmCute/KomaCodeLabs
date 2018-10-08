@@ -14,6 +14,7 @@ class App : Application() {
     var instance: App by Delegates.notNull()
   }
 
+
   override fun onCreate() {
     super.onCreate()
     instance = this

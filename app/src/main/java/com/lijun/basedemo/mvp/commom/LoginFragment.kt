@@ -13,6 +13,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.lijun.basedemo.App
 import com.lijun.basedemo.R
 import com.lijun.basedemo.utils.DisplayUtils
 import com.lijun.basedemo.view.gggg

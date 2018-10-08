@@ -6,7 +6,7 @@ package com.lijun.basedemo.view
  * @des
  */
 data class PieData(val name: String, val value: Float) {
-  private val percent: Float = 0.0f
-  private val color: Int = 0
-  private val angle: Float = 0.0f
+  var percent: Float = 0.0f
+  var color: Int = 0
+  var angle: Float = 0.0f
 }

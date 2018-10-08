@@ -8,9 +8,11 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.WindowManager
 import com.blankj.utilcode.util.BarUtils
-import com.lijun.basedemo.mvp.commom.LoginFragment
+import com.lijun.basedemo.fragment.CustomViewFragment
+import com.lijun.basedemo.fragment.PieData
 import com.lijun.basedemo.utils.DisplayUtils
 import com.lijun.basedemo.view.gggg
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+
     //DisplayUtils.setCustomDensity(this,application)
     val dm = DisplayMetrics()
     windowManager.defaultDisplay.getMetrics(dm)
@@ -56,13 +59,8 @@ class MainActivity : AppCompatActivity() {
     Log.i("dm", "uticode=" + BarUtils.isNavBarVisible(this) + "height=" + BarUtils.getNavBarHeight())
 
 
-
-
-
-
-
     supportFragmentManager.beginTransaction()
-        .replace(R.id.fragment_layout, LoginFragment())
+        .add(R.id.fragment_layout, CustomViewFragment())
         .commit()
   }
 }
