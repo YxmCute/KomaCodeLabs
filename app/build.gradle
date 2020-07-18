@@ -20,6 +20,9 @@ android {
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
   }
+  lintOptions {
+    abortOnError false
+  }
   signingConfigs {
     releaseConfig {
       storeFile file(KEYPATH)
@@ -71,6 +74,7 @@ android {
 
       // outputFileName = "${variant.productFlavors[0].name}-doctor-v${defaultConfig.versionName}-${defaultConfig.versionCode}-date-${releaseTime()}.apk"
     }
+
   }
   sourceSets {
     main {
