@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yxmcute.libc">
+    <application>
+
+    <provider
+        android:name="androidx.startup.InitializationProvider"
+        android:authorities="${applicationId}.androidx-startup"
+        android:exported="false"
+        tools:node="merge">
+
+        <!-- 自动初始化 -->
+        <meta-data
+            android:name="com.yxmcute.libc.LibCInitializer"
+            android:value="androidx.startup" />
+
+        <!-- 手动初始化（也是延迟初始化） -->
+        <!--            <meta-data-->
+        <!--                android:name="com.hi.dhl.startup.library.LibaryD"-->
+        <!--                android:value="androidx.startup"-->
+        <!--                tools:node="remove" />-->
+    </provider>
+</application>
+</manifest>

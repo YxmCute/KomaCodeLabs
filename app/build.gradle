@@ -1,36 +1,122 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
+static def releaseTime() {
+  return new Date().format("yyyy-MM-dd-HH-mm-ss", TimeZone.getTimeZone("GMT+08:00"))
+}
+
+def srcDirs = ['base','jetpack','databinding']
 android {
-  compileSdkVersion 28
-  buildToolsVersion "28.0.3"
+  compileSdkVersion Dep.compileSdkVersion
+  buildToolsVersion Dep.buildToolsVersion
   defaultConfig {
-    applicationId "com.lijun.basedemo"
-    minSdkVersion 15
-    targetSdkVersion 28
-    versionCode 1
-    versionName "1.0"
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    applicationId Dep.applicationId
+    minSdkVersion Dep.minSdkVersion
+    targetSdkVersion Dep.targetSdkVersion
+    versionCode Dep.versionCode
+    versionName Dep.versionName
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+  }
+  signingConfigs {
+    releaseConfig {
+      storeFile file(KEYPATH)
+      storePassword KEYPASSWORD
+      keyAlias ALIASNAME
+      keyPassword ALIAPASSWORD
+    }
   }
   buildTypes {
     release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      ndk {
+        //设置支持的SO库架构
+        abiFilters 'armeabi-v7a', "arm64-v8a"
+      }
+      signingConfig signingConfigs.releaseConfig
+      minifyEnabled true
+      debuggable false
+      //Zipalign优化
+      zipAlignEnabled true
+      // 移除无用的resource文件
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  buildFeatures {
+    dataBinding = true
+    viewBinding = true
+  }
+  compileOptions {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+  }
+  flavorDimensions "app"
+  //多渠道打包配置
+  productFlavors {
+    defaultapp {}
+  }
+  applicationVariants.all { variant ->
+    variant.outputs.all { output ->
+      /* variant.getPackageApplicationProvider().get().outputDirectory = new File("${rootDir}\\release")
+       if(variant.buildType.name.equals('debug')){
+           ///"commonui_${date}_${versionName}.apk"
+           outputFileName = "房券网_v${defaultConfig.versionName}_${releaseTime()}_debug.apk"
+       }*/
+      if (variant.buildType.name == 'release') {
+        output.outputFileName = "komacodelabs_v${defaultConfig.versionName}-${releaseTime()}-relase.apk"
+      }
+
+
+      // outputFileName = "${variant.productFlavors[0].name}-doctor-v${defaultConfig.versionName}-${defaultConfig.versionCode}-date-${releaseTime()}.apk"
+    }
+  }
+  sourceSets {
+    main {
+      manifest.srcFile 'java/com/yxmcute/codelabs/AndroidManifest.xml'
+      java.srcDir 'java'
+      java.includes = srcDirs.collect {
+        'com/yxmcute/codelabs/' + it + '/**/*.java'
+      }
+      java.excludes = [
+
+          '**/build/**',]
+      res.srcDirs = ['java/com/yxmcute/codelabs/res']
+      srcDirs.forEach {
+        res.srcDirs += 'java/com/yxmcute/codelabs/' + it + '/res'
+      }
     }
   }
 }
 
 dependencies {
-  implementation fileTree(include: ['*.jar'], dir: 'libs')
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-  implementation 'com.android.support:appcompat-v7:28.0.0'
-  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
- // implementation 'android.arch.lifecycle:extensions:1.1.1'
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation 'androidx.appcompat:appcompat:1.1.0'
+  implementation 'androidx.core:core-ktx:1.3.0'
+  implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+  implementation 'androidx.recyclerview:recyclerview:1.1.0'
+  implementation 'com.google.android.material:material:1.3.0-alpha01'
+  implementation Dep.constraintLayout
+  implementation 'com.google.android.gms:play-services-plus:16.0.0'
+  //implementation project(path: ':lib_a')
   testImplementation 'junit:junit:4.12'
-  androidTestImplementation 'com.android.support.test:runner:1.0.2'
-  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-  implementation project(':base')
+  androidTestImplementation 'androidx.test:runner:1.2.0'
+  androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  def lifecycle_version = "2.2.0"
+  implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+  implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
+  implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+  implementation 'com.google.dagger:dagger:2.27'
+  kapt 'com.google.dagger:dagger-compiler:2.27'
+  implementation 'com.google.dagger:dagger-android:2.27'
+  implementation 'com.google.dagger:dagger-android-support:2.27'
+  kapt 'com.google.dagger:dagger-android-processor:2.27'
+  implementation rootProject.ext.dependencies.gson
+  implementation Dep.startup
+  debugImplementation  Dep.leakcanary
+
 }
+
+

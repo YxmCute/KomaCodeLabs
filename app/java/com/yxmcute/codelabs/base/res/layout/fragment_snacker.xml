@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <Button
+        android:id="@+id/btn_snack_basic"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="SnackerBar的基本使用" />
+
+    <Button
+        android:id="@+id/btn_snack_color"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="SnackerBar的颜色" />
+
+    <Button
+        android:id="@+id/btn_snack_setaction"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="SnackerBar setAction" />
+    <Button
+        android:id="@+id/btn_snack_callback"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="SnackerBar callBack" />
+    <Button
+        android:id="@+id/btn_snack_custom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="SnackerBar custom" />
+
+</LinearLayout>

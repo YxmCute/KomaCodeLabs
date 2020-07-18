@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <!--android:oneshot=“false”： 表示是否重复播放动画，还是只播放一次；-->
+    <item android:drawable="@drawable/ic_plusone_tall_off_client" android:duration="500"/>
+    <item android:drawable="@mipmap/ic_launcher" android:duration="500"/>
+    <item android:drawable="@drawable/ic_plusone_small_off_client" android:duration="500"/>
+
+
+</animation-list>

@@ -1,1 +1,4 @@
-include ':app', ':base'
+include ':lib_b'
+include ':lib_c'
+include ':lib_a'
+include ':app'
