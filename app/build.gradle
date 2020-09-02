@@ -119,7 +119,7 @@ dependencies {
   kapt 'com.google.dagger:dagger-android-processor:2.27'
   implementation rootProject.ext.dependencies.gson
   implementation Dep.startup
-  debugImplementation  Dep.leakcanary
+  implementation Dep.linkage_recyclerview
 
 }
 

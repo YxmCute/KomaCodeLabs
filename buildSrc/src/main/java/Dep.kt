@@ -29,6 +29,12 @@ object Dep {
 
   object AndroidX {
     const val startup = "1.0.0-alpha01"
+    const val linkage_recyclerview = "1.9.2"
+
+  }
+
+  object Third {
+    const val linkage_recyclerview = "1.9.2"
   }
 
   val constraintLayout = "androidx.constraintlayout:constraintlayout:${Version.constraint}"
@@ -36,6 +42,7 @@ object Dep {
 
   //https://github.com/square/leakcanary/ https://square.github.io/leakcanary/getting_started/
   val leakcanary = "com.squareup.leakcanary:leakcanary-android:${Squareup.leakcanary}"
-
+  val linkage_recyclerview =
+    "com.kunminx.linkage:linkage-recyclerview:${Third.linkage_recyclerview}"
 
 }
