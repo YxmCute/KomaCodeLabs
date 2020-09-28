@@ -15,12 +15,13 @@ object Dep {
 
   object Version {
 
-    val constraint = "2.0.0-beta6"
+    val constraint = "2.0.1"
 
   }
 
   object JetPack {
     const val startup = "1.0.0-alpha01"
+    const val work_version = "2.4.0"
   }
 
   object Squareup {
@@ -28,7 +29,7 @@ object Dep {
   }
 
   object AndroidX {
-    const val startup = "1.0.0-alpha01"
+    const val startup = "1.0.0-alpha03"
     const val linkage_recyclerview = "1.9.2"
 
   }
@@ -44,5 +45,14 @@ object Dep {
   val leakcanary = "com.squareup.leakcanary:leakcanary-android:${Squareup.leakcanary}"
   val linkage_recyclerview =
     "com.kunminx.linkage:linkage-recyclerview:${Third.linkage_recyclerview}"
+
+  // (Java only)
+  val work_mananger = "androidx.work:work-runtime:${JetPack.work_version}"
+
+  // Kotlin + coroutines
+  val work_mananger_ktx = "androidx.work:work-runtime-ktx:${JetPack.work_version}"
+
+  // optional - Test helpers
+  val work_testing = "androidx.work:work-testing:${JetPack.work_version}"
 
 }
