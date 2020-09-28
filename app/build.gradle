@@ -7,7 +7,7 @@ static def releaseTime() {
   return new Date().format("yyyy-MM-dd-HH-mm-ss", TimeZone.getTimeZone("GMT+08:00"))
 }
 
-def srcDirs = ['base','jetpack','databinding']
+def srcDirs = ['base','jetpack','databinding',"customview"]
 android {
   compileSdkVersion Dep.compileSdkVersion
   buildToolsVersion Dep.buildToolsVersion

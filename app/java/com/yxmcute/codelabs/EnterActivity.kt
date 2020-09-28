@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.yxmcute.codelabs.base.anim.AnimFragment
 import com.yxmcute.codelabs.base.snacker.SnakeBarFragment
 import com.yxmcute.codelabs.base.toast.ToastFragment
+import com.yxmcute.codelabs.customview.basic.ComparePaintStyleFragment
 import com.yxmcute.codelabs.jetpack.workmanager.WorkManagerFragment
 
 /**
@@ -20,7 +21,7 @@ class EnterActivity : AppCompatActivity() {
     setContentView(R.layout.activity_fragment)
     if (savedInstanceState == null) {
       supportFragmentManager.beginTransaction()
-          .add(R.id.fl_container, WorkManagerFragment())
+          .add(R.id.fl_container, ComparePaintStyleFragment())
           .commit()
     }
   }
