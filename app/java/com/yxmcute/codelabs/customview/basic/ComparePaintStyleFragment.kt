@@ -1,7 +1,7 @@
 package com.yxmcute.codelabs.customview.basic
 
 import com.yxmcute.codelabs.base.BaseBindingFragment
-import com.yxmcute.codelabs.databinding.FragmentComparePaintStyleBinding
+
 
 /**
  * <pre>
@@ -13,5 +13,3 @@ import com.yxmcute.codelabs.databinding.FragmentComparePaintStyleBinding
  *     version: 1.0
  * </pre>
  */
-class ComparePaintStyleFragment : BaseBindingFragment<FragmentComparePaintStyleBinding>() {
-}
