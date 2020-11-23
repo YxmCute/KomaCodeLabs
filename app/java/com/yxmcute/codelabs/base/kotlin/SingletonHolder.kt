@@ -2,7 +2,7 @@ package com.yxmcute.codelabs.base.kotlin
 
 /**
  * <pre>
- *     author : LiJun
+ *     author : Koma
  *     e-mail : lijunyxm@qq.com
  *     time   : 2020/08/06 13:21
  *     desc   :

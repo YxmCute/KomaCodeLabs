@@ -8,7 +8,7 @@ import com.yxmcute.codelabs.databinding.ActivityStackABinding
 
 /**
  * <pre>
- *     author : LiJun
+ *     author : Koma
  *     e-mail : lijunyxm@qq.com
  *     time   : 2020/09/02 21:18
  *     desc   :

@@ -5,7 +5,7 @@ import kotlin.LazyThreadSafetyMode.PUBLICATION
 
 /**
  * <pre>
- *     author : LiJun
+ *     author : Koma
  *     e-mail : lijunyxm@qq.com
  *     time   : 2020/08/06 12:05
  *     desc   : 一个object就代表一个单例

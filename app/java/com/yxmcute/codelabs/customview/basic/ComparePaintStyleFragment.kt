@@ -5,7 +5,7 @@ import com.yxmcute.codelabs.base.BaseBindingFragment
 
 /**
  * <pre>
- *     author : LiJun
+ *     author : Koma
  *     e-mail : lijunyxm@qq.com
  *     time   : 2020/09/28 17:39
  *     desc   :

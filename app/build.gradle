@@ -75,17 +75,17 @@ android {
         output.outputFileName = "komacodelabs_v${defaultConfig.versionName}-${releaseTime()}-relase.apk"
 
       }
-      androidJunkCode.configMap.put(variant.name, {
-        packageBase = "cn.hx.plugin.ui"  //生成java类根包名
-        packageCount = 30 //生成包数量
-        activityCountPerPackage = 3 //每个包下生成Activity类数量
-        otherCountPerPackage = 50  //每个包下生成其它类的数量
-        methodCountPerClass = 20  //每个类下生成方法数量
-        resPrefix = "junk_"  //生成的layout、drawable、string等资源名前缀
-        drawableCount = 300  //生成drawable资源数量
-        stringCount = 300  //生成string数量
+      /*androidJunkCode.configMap.put(variant.name, {
+        packageBase = "com.sanya.xinzhu.ui.junk"  //生成java类根包名
+        packageCount = 60//生成包数量
+        activityCountPerPackage = 6 //每个包下生成Activity类数量
+        otherCountPerPackage = 100  //每个包下生成其它类的数量
+        methodCountPerClass = 40  //每个类下生成方法数量
+        resPrefix = "junk_zhubei_lite_"  //生成的layout、drawable、string等资源名前缀
+        drawableCount = 600  //生成drawable资源数量
+        stringCount = 600  //生成string数量
       })
-
+*/
 
       // outputFileName = "${variant.productFlavors[0].name}-doctor-v${defaultConfig.versionName}-${defaultConfig.versionCode}-date-${releaseTime()}.apk"
     }
